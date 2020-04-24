@@ -45,21 +45,19 @@ public class CatalogueServlet extends HttpServlet {
         catalogue.listOfWorks.add(theTurning);
 
 
+        resp.setContentType("text/html;charset=UTF-8");
+        out.print("<html>");
+        out.print(" <head>");
+        out.print("<title>Catalogue</title>");
+        out.print("</head>");
+        out.print("<body>");
         for (Work work:catalogue.listOfWorks) {
-            out.print("<!DOCTYPE html>");
-            out.print("<html>");
-            out.print(" <head>");
-            out.print("<title>Catalogue</title>");
-            out.print("<meta charset=\"UTF-8\">");
-            out.print("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-            out.print("</head>");
-            out.print("<body>");
+
             out.print("<div><a href=\"work-details?id="+work.getId()+"\">"+work.getTitle() +" (" + work.getRelease() +")</a></div>");
-            out.print("</body>");
-            out.print("</html>");
+
         }
-
-
+        out.print("</body>");
+        out.print("</html>");
     }
 }
 

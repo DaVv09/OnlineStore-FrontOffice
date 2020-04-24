@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HomeServlet", urlPatterns = {"/front"})
+@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,6 +24,7 @@ public class HomeServlet extends HttpServlet {
         out.print("<a href=\"catalogue\">Accès au catalogue des oeuvres</a>");
         out.print("</body>");
         out.print("</html>");
+
     }
 }
 
