@@ -23,11 +23,12 @@ public class WorkDetailsServlet extends HttpServlet {
         for (Work work : Catalogue.listOfWorks) {
             if (work.getId() == Long.parseLong(sId)) {
                 selectedWork = work;
-                req.setAttribute("selectedWork", selectedWork);
-                RequestDispatcher disp = req.getRequestDispatcher("/work-details.jsp");
-                disp.forward(req, resp);
+                break;
             }
         }
+        req.setAttribute("selectedWork", selectedWork);
+        RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/work-details.jsp");
+        disp.forward(req, resp);
     }
 }
 
